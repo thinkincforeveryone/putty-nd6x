@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{71E270A4-9025-43E2-9827-EC8ECB079CF7}</ProjectGuid>
+    <RootNamespace>putty_view</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetExt>.lib</TargetExt>
+    <OutDir>..\lib\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>$(ProjectName)_r</TargetName>
+    <OutDir>../lib/</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.;../examples/chrome;../library/ui_gfx;../library;../library/third_party/skia/include/core;../library/third_party/skia/include/config;../library/third_party/skia/include/effects;../library/third_party/skia/include/ports;../library/third_party/skia/include/utils;../library/third_party/skia/src/core;../putty/charset;../putty/windows;../putty/;../fsm;../zmodem;../libcurl/include;..\libevent\WIN32-Code\nmake;../libevent/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;WINVER=0x0600;_WIN32_WINNT=0x0600;NOMINMAX;SECURITY_WIN32;_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;WINNT;DEBUG;WIN32S_COMPAT;PSWD="n0o614";_NO_OLDNAMES;NO_MULTIMON;NO_HTMLHELP;CURL_STATICLIB;%(PreprocessorDefinitions);_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>.;../examples/chrome;../library/ui_gfx;../library;../library/third_party/skia/include/core;../library/third_party/skia/include/config;../library/third_party/skia/include/effects;../library/third_party/skia/include/ports;../library/third_party/skia/include/utils;../library/third_party/skia/src/core;../putty/charset;../putty/windows;../putty/;../fsm;../zmodem;../libcurl/include;..\libevent\WIN32-Code\nmake;../libevent/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WINVER=0x0600;_WIN32_WINNT=0x0600;NOMINMAX;SECURITY_WIN32;_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;WINNT;DEBUG;WIN32S_COMPAT;PSWD="n0o614";_NO_OLDNAMES;NO_MULTIMON;NO_HTMLHELP;CURL_STATICLIB;%(PreprocessorDefinitions);_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\zmodem\zmodem.h" />
+    <ClInclude Include="..\zmodem\zmodem_session.h" />
+    <ClInclude Include="CmdLineHandler.h" />
+    <ClInclude Include="google_drive_fsm_session.h" />
+    <ClInclude Include="NativeSftpController.h" />
+    <ClInclude Include="NativeSftpPage.h" />
+    <ClInclude Include="native_putty_common.h" />
+    <ClInclude Include="native_putty_controller.h" />
+    <ClInclude Include="native_putty_page.h" />
+    <ClInclude Include="PuttyFileDialog.h" />
+    <ClInclude Include="putty_callback.h" />
+    <ClInclude Include="putty_global_config.h" />
+    <ClInclude Include="putty_timer.h" />
+    <ClInclude Include="putty_view.h" />
+    <ClInclude Include="RulesTable.hpp" />
+    <ClInclude Include="SftpCallback.h" />
+    <ClInclude Include="SftpView.h" />
+    <ClInclude Include="window_interface.h" />
+    <ClInclude Include="zmodem_file.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\zmodem\zmodem_session.cpp" />
+    <ClCompile Include="CmdLineHandler.cpp" />
+    <ClCompile Include="google_drive_fsm_session.cpp" />
+    <ClCompile Include="NativeSftpController.cpp" />
+    <ClCompile Include="NativeSftpPage.cpp" />
+    <ClCompile Include="native_putty_common.cpp" />
+    <ClCompile Include="native_putty_controller.cpp" />
+    <ClCompile Include="native_putty_page.cpp" />
+    <ClCompile Include="PuttyFileDialog.cpp" />
+    <ClCompile Include="putty_callback.cpp" />
+    <ClCompile Include="putty_view.cpp" />
+    <ClCompile Include="readlnk.cpp" />
+    <ClCompile Include="SftpCallback.cpp" />
+    <ClCompile Include="SftpView.cpp" />
+    <ClCompile Include="window_interface.cpp" />
+    <ClCompile Include="zmodem_file.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
